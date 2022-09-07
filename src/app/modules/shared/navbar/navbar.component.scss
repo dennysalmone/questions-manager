@@ -1,0 +1,54 @@
+@import "src/assets/styles/variables";
+
+.top-navbar {
+    background: $secondary-light;
+    height: 60px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo-png {
+    height: 90%;
+    margin: 5%;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    div {
+        height: 100%;
+        padding: 0px 40px;
+        cursor: pointer;
+        display: table;
+        flex-direction: row;
+        justify-content: center; 
+        align-items: center;
+        span {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+    div:hover {
+        background: $secondary;
+    }
+}
+
+.active-route {
+    background: $secondary;
+}
+
+.overlay {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 60px;
+}
+
+mat-icon {
+    position: relative;
+    top: 2px;
+    left: -4px;
+}

@@ -1,0 +1,127 @@
+// @import "src/assets/styles/variables";
+
+@mixin heading1() {
+    font-size: 64px;
+    line-height: 80px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+}
+@mixin heading2() {
+    font-size: 48px;
+    line-height: 56px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+}
+@mixin heading3() {
+    font-size: 32px;
+    line-height: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+}
+@mixin heading4() {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+}
+@mixin heading5() {
+    font-size: 20px;
+    line-height: 24px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+}
+@mixin heading6() {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+}
+
+@mixin text-large() {
+    font-size: 20px;
+    line-height: 32px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400px;
+}
+@mixin text-regular() {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400px;
+}
+@mixin text-small() {
+    font-size: 14px;
+    line-height: 24px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400px;
+}
+@mixin text-tiny() {
+    font-size: 12px;
+    line-height: 24px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400px;
+}
+@mixin text-caption() {
+    font-size: 14px;
+    line-height: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400px;
+}
+
+@mixin text-overline1() {
+    font-size: 14px;
+    line-height: 24px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+@mixin text-overline2() {
+    font-size: 12px;
+    line-height: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+@mixin text-link1() {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+}
+@mixin text-link2() {
+    font-size: 14px;
+    line-height: 24px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+}
+@mixin text-link3() {
+    font-size: 12px;
+    line-height: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+}
+
+$primary-light: #BEB7FB;
+$primary: #5A4AF4;
+$primary-dark: #120F31;
+$secondary-light: #A5DBFE;
+$secondary: #1EA5FC;
+$secondary-dark: #062032;
+$tertary-light: #E2C5FF;
+$tertary: #B66DFF;
+$tertary-dark: #241633;
+$success-light: #9BEBD3;
+$success: #05CE91;
+$success-dark: #01291D;
+$error-light: #FFC0C0;
+$error: #FF6161;
+$error-dark: #331313;
+$warning-light: #FFDEB6;
+$warning: #FFAD49;
+$warning-dark: #33230F;
+$black-light: #222222;
+$black: #161616;
+$black-dark: #000000;
+$white: #FFFFFF;
+$grey-light: #A8AEBF;
+$grey: #61697F;
+$grey-dark: #121829;

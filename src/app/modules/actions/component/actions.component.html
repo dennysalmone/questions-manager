@@ -1,0 +1,79 @@
+<mat-tab-group [(selectedIndex)]="tabIndex" mat-align-tabs="center">
+    <!-- [selectedIndex]="getSelectedIndex()" -->
+    <mat-tab [label]="EQuestionType.open | titlecase"> 
+
+        <form (submit)="onSubmitOpen()" [formGroup]="openQuestion" >
+            <div class="form-overlay">
+                <div>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Question title</mat-label>
+                        <input matInput formControlName="question" placeholder="Question title">
+                    </mat-form-field>
+                    <button [disabled]="!openQuestion.valid" mat-stroked-button color="primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </mat-tab>
+
+    <mat-tab [label]="EQuestionType.single | titlecase"> 
+        <form (submit)="onSubmitSingle()" [formGroup]="singleQuestion">
+            <div class="form-overlay">
+                <div>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Question title</mat-label>
+                        <input matInput formControlName="question" placeholder="Question title">
+                    </mat-form-field>
+                    <button [disabled]="!singleQuestion.valid  || singleQuestion.value.options.length < 2" mat-stroked-button color="primary">Submit</button>
+                </div>
+                <div>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Add options</mat-label>
+                        <input matInput [(ngModel)]="singleModel" [ngModelOptions]="{standalone: true}" placeholder="Option title">
+                    </mat-form-field>
+                    <button [disabled]="!singleModel" type='button' (click)="addOptionSingle()" mat-stroked-button color="primary">Add</button>
+                </div>
+                <div class="options-block">
+                    <span *ngFor="let option of singleQuestion.value.options, index as o">
+                        <mat-icon (click)="removeOptionSingle(o)" class="pointer">close</mat-icon>
+                        <span>{{option}}</span>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </mat-tab>
+
+
+
+
+
+
+
+    <mat-tab [label]="EQuestionType.multi | titlecase"> 
+        <form (submit)="onSubmitMulti()" [formGroup]="multiQuestion">
+            <div class="form-overlay">
+                <div>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Question title</mat-label>
+                        <input matInput formControlName="question" placeholder="Question title">
+                    </mat-form-field>
+                    <button [disabled]="!multiQuestion.valid  || multiQuestion.value.options.length < 2" mat-stroked-button color="primary">Submit</button>
+                </div>
+
+                <div>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Add options</mat-label>
+                        <input matInput [(ngModel)]="multiModel" [ngModelOptions]="{standalone: true}" placeholder="Option title">
+                    </mat-form-field>
+                    <button [disabled]="!multiModel" type='button' (click)="addOptionMulti()" mat-stroked-button color="primary">Add</button>
+                </div>
+
+                <div class="options-block">
+                    <span *ngFor="let option of multiQuestion.value.options, index as o">
+                        <mat-icon (click)="removeOptionMulti(o)" class="pointer">close</mat-icon>
+                        <span>{{option}}</span>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </mat-tab>
+</mat-tab-group>

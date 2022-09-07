@@ -1,0 +1,11 @@
+:host {
+    .main-container {
+        display: flex;
+        justify-content: center;
+        .main-overlay {
+            width: 1800px;
+            margin: 15px;
+            padding: 5px;
+        }
+    }
+}

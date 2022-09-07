@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="overlay">
+        <ng-container *ngFor="let question of ansQuestions, index as i">
+            <div class="block">
+                <app-card (deleteQuestion)="deleteItem(question.id)" [cardType]="ECardType.list" [question]="question"></app-card>
+            </div>
+        </ng-container>
+    </div>
+    
+    <div class="overlay">
+        <ng-container *ngFor="let question of nonAnsQuestions, index as i">
+            <div class="block">
+                <app-card (deleteQuestion)="deleteItem(question.id)" [cardType]="ECardType.list" [question]="question"></app-card>
+            </div>
+        </ng-container>
+    </div>
+</div>
+
+
+
+
+
+
+
+<ng-container *ngIf="!ansQuestions.length && !nonAnsQuestions.length">
+    <div>List is empty</div>
+</ng-container>

@@ -1,0 +1,53 @@
+<div class="card">
+    <form [formGroup]="answersGroup" (submit)="addAnswer()">
+    <div class="title">{{question.title}}</div>
+    <div *ngIf="cardType === ECardType.management">{{question.created | date:'shortTime'}}</div>
+    <ng-container *ngIf="cardType === ECardType.list && answerToggle">
+        <div class="answers">
+            <ng-container [ngSwitch]="question.typeQuestion">
+                
+
+                    <div *ngSwitchCase="EQuestionType.open">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Input</mat-label>
+                            <input matInput formControlName="text">
+                        </mat-form-field>
+                    </div>
+            
+
+                    <div *ngSwitchCase="EQuestionType.single">
+                        <mat-radio-group formControlName="text" required aria-label="Select an option">
+                            <ng-container *ngFor="let option of question.options, index as i">
+                                <div>
+                                    <mat-radio-button  [value]="option">{{option}}</mat-radio-button>
+                                </div>
+                            </ng-container>
+                        </mat-radio-group>
+                    </div>
+
+
+                    <div *ngSwitchCase="EQuestionType.multi">
+                        <div *ngFor="let option of question.options, index as i">
+                            <mat-checkbox [formControlName]="i">
+                            {{option}}
+                            </mat-checkbox>
+                        </div>
+                    </div>
+
+
+            </ng-container>
+        </div>
+    </ng-container>
+    <div class="buttons">
+        <ng-container *ngIf="cardType === ECardType.management">
+            <button mat-stroked-button type="button" color="primary" (click)="deleteQuest()">Delete</button>
+            <button mat-stroked-button type="button" color="primary" (click)="editQuest()">Edit</button>
+        </ng-container>
+        <ng-container *ngIf="cardType === ECardType.list">
+            <button *ngIf="question.answer.length" mat-stroked-button type="button" (click)="removeAnswer()" color="warn">Remove answer</button>
+            <button *ngIf="!question.answer.length && !answerToggle" type="button" (click)="toggleAnswer()" mat-stroked-button color="primary">Add answer</button>
+            <button *ngIf="!question.answer.length && answerToggle" type="submit" mat-stroked-button color="primary">Accept</button>
+        </ng-container>
+    </div>
+    </form>
+</div>

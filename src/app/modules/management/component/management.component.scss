@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    justify-content: center;
+    .overlay {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        .block {
+            margin: 6px;
+            padding: 6px;
+            border-radius: 6px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+    }
+}
+

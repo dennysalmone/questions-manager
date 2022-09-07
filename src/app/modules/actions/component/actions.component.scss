@@ -1,0 +1,23 @@
+.form-overlay {
+    padding: 15px;
+    div {
+        button {
+            margin-left: 10px;
+        }
+    }
+}
+
+.options-block {
+    display: flex;
+    flex-direction: column;
+    span {
+        margin: 4px;
+        display: flex;
+        position: relative;
+        top: -3px
+    }
+}
+
+.pointer {
+    cursor: pointer;
+}

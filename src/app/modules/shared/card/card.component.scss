@@ -1,0 +1,13 @@
+@import "src/assets/styles/variables";
+
+.card {
+    width: 250px;
+    .buttons {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .title {
+        @include heading6();
+    }
+}
