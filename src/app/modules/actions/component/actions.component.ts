@@ -81,7 +81,7 @@ export class ActionsComponent implements OnInit, OnDestroy {
   }
 
   setFromQuery(id: string): void {
-    let question: IQuestion;
+    let question!: IQuestion;
     this.questions.forEach(el => {
       if(el.id === id) {
         question = el;
@@ -90,29 +90,26 @@ export class ActionsComponent implements OnInit, OnDestroy {
 
     this.uniqId = id;
 
-    if(question!.typeQuestion === EQuestionType.open) {
+    if(question.typeQuestion === EQuestionType.open) {
       this.openQuestion.setValue({
-        question: question!.title,
+        question: question.title,
       });
       this.tabIndex = 0;
     }
-
-    if(question!.typeQuestion === EQuestionType.single) {
+    if(question.typeQuestion === EQuestionType.single) {
       this.singleQuestion.setValue({
-        question: question!.title,
-        options: question!.options
+        question: question.title,
+        options: [...question.options]
       });
       this.tabIndex = 1;
     }
-
     if(question!.typeQuestion === EQuestionType.multi) {
       this.multiQuestion.setValue({
-        question: question!.title,
-        options: question!.options
+        question: question.title,
+        options: [...question.options]
       });
       this.tabIndex = 2;
     }
-
   }
 
   addOptionSingle(): void {
@@ -123,7 +120,7 @@ export class ActionsComponent implements OnInit, OnDestroy {
 
   addOptionMulti(): void {
     if(!this.multiModel) return;
-    this.multiQuestion.value.options.push(this.multiModel);
+    this.multiQuestion.value.options.push(this.multiModel); 
     this.multiModel = '';
   }
 
@@ -176,6 +173,5 @@ export class ActionsComponent implements OnInit, OnDestroy {
     this.uniqId = this.questionService.uniqId();
     this.router.navigate(['/management'])
   }
-
 
 }

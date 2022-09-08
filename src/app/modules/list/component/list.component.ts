@@ -40,7 +40,7 @@ export class ListComponent implements OnInit, OnDestroy {
         this.setStateDate(state)
       }
     )
-  }
+  } 
 
   setStateDate(state: IState): void {
     this.ansQuestions = [];
